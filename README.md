@@ -10,15 +10,17 @@
 </p><br>
 
 # Usage
-- Copy `switch-rich-presence.kip` to your sd card and edit the `hekate_ipl.ini` to include the sysmodule.<br>
+- If using hekate, copy `switch-rich-presence.kip` to your sd card and edit the `hekate_ipl.ini` to include the sysmodule.<br>
 (You can for example add a configuration like this.)
 ```
 [Discord Rich Presence]
 kip1=switch-rich-presence.kip
 ```
-- Boot your switch into RCM mode and run hekate on it.
-- Launch your hekate configuration with rich presence and wait until your switch turns on completely. (Also make sure that your switch is connected to internet.)
+- Boot your switch into RCM mode and run your payload of choice.
+	- If using hekate, launch your hekate configuration with rich presence and wait until your switch turns on completely.
+- Make sure that Discord is running.
 - Open the client (`SwitchRichPresence.exe`) and click the "Connect" button.
+	- If you're on Linux, you'll need to run the executable using Mono. Just open a terminal in the same folder and run `mono SwitchRichPresence.exe`; eventually you can assign .exe files to Mono, but that's not suggested, you may want to use Wine instead for other programs.
 - Done!
 
 # Setup a Rich presence app
@@ -34,8 +36,12 @@ kip1=switch-rich-presence.kip
 - Open the `config.txt` file at the root of the client (If this file doesn't exit, running the client once closing it will create a new one.) and edit the `client_id` line  with the client ID of the rich presence app you just created.
 
 # Known issues
-- The switch might hang on when getting into sleep mode or when turning it off. If that happens, hard shutdown your switch by pressing the POWER button for ~15 seconds.
+- The switch might hang on when connected to the client and:
+	- It goes into sleep mode.
+	- Flight mode is activated or WiFi connection disconnected.
+	- The PC client crashes/hangs/is forcefully closed.
+	- Basically, every time something breaks the connection.
+If that happens, a message should appear on the screen telling you to press the power button. If it just hangs without any message, hard shutdown your Switch by pressing the POWER button for ~15 seconds.
 
 # Other
 Again, huge thanks to everyone who contributed to the amazing documentation on [SwitchBrew](http://switchbrew.org/index.php?title=Main_Page).<br><br>
-If you have any question/problem, please contact me on discord : random#6457

@@ -44,5 +44,20 @@ namespace SwitchPresence
         {
             Process.Start("https://www.youtube.com/channel/UCuhdQw_BibXDqPimSQn4iQg");
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://twitter.com/exentiostep");
+        }
+
+        private void linkLabel3_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/exentio");
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://exentio.sexy");
+        }
     }
 }

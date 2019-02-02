@@ -21,7 +21,6 @@ namespace SwitchPresence
         long startTime;
         string CurrentUser = null;
 
-
         private void UpdateInfo()
         {
             bool newTitle = (CurrentPlaying != null && CurrentPlaying.TitleID != CurrentTid);
@@ -39,7 +38,7 @@ namespace SwitchPresence
 
                     discord.presence = new DiscordRpc.RichPresence()
                     {
-                        details = $"Playing {CurrentPlaying.Metadata.GetLanguage().ApplicationName}",
+                        details = $"{CurrentPlaying.Metadata.GetLanguage().ApplicationName}",
                         smallImageKey = "icon",
                         smallImageText = "SwitchPresence Sysmodule",
                         largeImageKey = $"{CurrentPlaying.TitleID:x16}",
@@ -121,7 +120,8 @@ namespace SwitchPresence
 
             LoadConfig();
 
-            Updater.GetUpdate();
+            //Let's not break it with unwanted updates from the main repo
+            //Updater.GetUpdate();
 
             if (!Directory.Exists(TEMP_PATH))
             {
@@ -248,7 +248,7 @@ namespace SwitchPresence
         {
             if (string.IsNullOrWhiteSpace(textBox_overridedetail.Text) && (CurrentPlaying != null))
             {
-                discord.presence.details = $"Playing {CurrentPlaying.Metadata.GetLanguage().ApplicationName}";
+                discord.presence.details = $"{CurrentPlaying.Metadata.GetLanguage().ApplicationName}";
             }
             else if (CurrentPlaying != null)
             {
